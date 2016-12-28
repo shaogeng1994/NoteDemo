@@ -37,7 +37,7 @@ public class EditNotePresenter implements EditNoteContract.Presenter {
             mView.showToast("输入内容");
             return;
         }
-        if(id == null && id !=-1) {
+        if(id == null || id ==-1) {
             Note note = new Note(null,System.currentTimeMillis(),title,content);
             Long id = noteDao.insert(note);
             if(id!=null) {

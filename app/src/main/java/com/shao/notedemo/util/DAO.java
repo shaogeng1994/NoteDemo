@@ -14,6 +14,7 @@ public class DAO {
     private DaoSession daoSession;
 
     private DAO(Context context) {
+        //获取一个Session对象，即和数据库的连接;
         DaoMaster.DevOpenHelper devOpenHelper = new DaoMaster.DevOpenHelper(context, "note.db", null);
         DaoMaster daoMaster = new DaoMaster(devOpenHelper.getWritableDb());
         daoSession = daoMaster.newSession();
